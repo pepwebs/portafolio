@@ -1,0 +1,175 @@
+/* assets/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.project-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    flex: 1 1 calc(50% - 1rem);
+}
+
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+form button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo del botón del menú */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Ocultar el menú por defecto en dispositivos pequeños */
+#nav-menu {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+}
+
+
+/* Transiciones generales */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Hover en enlaces del menú */
+nav ul li a:hover {
+    color: #ffd700; /* Un color dorado llamativo */
+}
+
+/* Botón de enviar en el formulario */
+form button:hover {
+    background-color: #555; /* Cambiar el color al pasar el mouse */
+}
+
+/* Animación de aparición */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-list {
+        flex-direction: column;
+    }
+
+    .project {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Indicadores de error y éxito */
+input.error, textarea.error {
+    border: 2px solid red;
+}
+
+input.success, textarea.success {
+    border: 2px solid green;
+}
